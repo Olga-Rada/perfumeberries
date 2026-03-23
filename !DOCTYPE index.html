@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PERFUMEBERRIES | Элитные духи премиум-класса</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0518;
+            background-image: radial-gradient(circle at 20% 30%, rgba(120, 50, 150, 0.2) 0%, #0a0518 90%);
+            font-family: 'Inter', sans-serif;
+            color: #f5eefc;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo, .service-title, .price, .hero-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, #e8c97a, #b88b2c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #e8c97a;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #c9b3e6;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(232, 201, 122, 0.4);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(232, 201, 122, 0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 5, 24, 0.85);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #e8c97a;
+        }
+
+        .logo span {
+            color: #b77dff;
+            font-size: 2rem;
+        }
+
+        .nav a {
+            color: #e8d9ff;
+            text-decoration: none;
+            margin-left: 28px;
+            font-weight: 500;
+            transition: 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            color: #e8c97a;
+            border-bottom-color: #e8c97a;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0 40px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4.2rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .hero-text .accent {
+            background: linear-gradient(135deg, #e8c97a, #d4a53c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #cbbff0;
+            margin-bottom: 2rem;
+            max-width: 550px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #e8c97a, #b88b2c);
+            color: #1a0f2a;
+            box-shadow: 0 4px 14px rgba(184, 139, 44, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(232, 201, 122, 0.5);
+        }
+
+        .btn-outline {
+            border: 1.5px solid #e8c97a;
+            background: transparent;
+            color: #e8c97a;
+        }
+
+        .btn-outline:hover {
+            background: rgba(232, 201, 122, 0.1);
+            border-color: #f5d98c;
+        }
+
+        .hero-visual {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-visual i {
+            font-size: 10rem;
+            color: #e8c97a;
+            filter: drop-shadow(0 0 20px rgba(232, 201, 122, 0.5));
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Каталог */
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: rgba(30, 20, 50, 0.7);
+            border: 1px solid rgba(232, 201, 122, 0.4);
+            padding: 10px 24px;
+            border-radius: 40px;
+            color: #e8d9ff;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(95deg, #e8c97a, #b88b2c);
+            color: #1a0f2a;
+            border-color: transparent;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            background: rgba(30, 20, 50, 0.8);
+            border: 1px solid rgba(232, 201, 122, 0.4);
+            border-radius: 60px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e8c97a;
+        }
+
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 10px;
+            background: rgba(20, 12, 35, 0.5);
+            border-radius: 24px;
+        }
+
+        .perfume-card {
+            background: rgba(30, 20, 50, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid rgba(232, 201, 122, 0.2);
+        }
+
+        .perfume-card:hover {
+            border-color: #e8c97a;
+            background: rgba(50, 35, 75, 0.8);
+        }
+
+        .perfume-card.selected {
+            background: linear-gradient(95deg, rgba(232, 201, 122, 0.2), rgba(184, 139, 44, 0.2));
+            border-color: #e8c97a;
+        }
+
+        .perfume-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .perfume-info p {
+            font-size: 0.8rem;
+            color: #c9b3e6;
+        }
+
+        .check-icon {
+            color: #e8c97a;
+            font-size: 1.2rem;
+        }
+
+        /* Конструктор набора */
+        .constructor-section {
+            background: linear-gradient(145deg, #120c22, #0a0618);
+            border-radius: 48px;
+            margin: 40px 0;
+            border: 1px solid rgba(232, 201, 122, 0.3);
+        }
+
+        .constructor-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 32px;
+        }
+
+        .selected-list {
+            background: rgba(30, 20, 50, 0.5);
+            border-radius: 28px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 150px;
+        }
+
+        .selected-item {
+            display: inline-block;
+            background: rgba(232, 201, 122, 0.2);
+            border: 1px solid #e8c97a;
+            border-radius: 40px;
+            padding: 6px 14px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        .remove-item {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #ffaa88;
+        }
+
+        .price-summary {
+            font-size: 1.8rem;
+            color: #e8c97a;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 20px;
+            background: rgba(30, 20, 50, 0.8);
+            border: 1px solid rgba(232, 201, 122, 0.4);
+            border-radius: 48px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #e8c97a;
+        }
+
+        .form-btn {
+            background: linear-gradient(95deg, #e8c97a, #b88b2c);
+            color: #1a0f2a;
+            width: 100%;
+            padding: 14px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .toast-message {
+            background: #2a1f3a;
+            border-left: 5px solid #e8c97a;
+            border-radius: 12px;
+            padding: 12px 20px;
+            margin-top: 20px;
+        }
+
+        .testimonials {
+            background: rgba(30, 20, 50, 0.4);
+            border-radius: 48px;
+            padding: 40px 24px;
+        }
+
+        .testimonial-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .testi-card {
+            background: rgba(20, 12, 35, 0.7);
+            border-radius: 32px;
+            padding: 28px;
+            max-width: 320px;
+            border: 1px solid rgba(232, 201, 122, 0.3);
+        }
+
+        .testi-card i {
+            color: #e8c97a;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            border-top: 1px solid rgba(232, 201, 122, 0.3);
+            padding: 40px 0;
+            text-align: center;
+            color: #b8a5d9;
+        }
+
+        @media (max-width: 750px) {
+            .hero-text h1 { font-size: 2.4rem; }
+            h2 { font-size: 2rem; }
+            .perfume-grid { max-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">✨ PERFUME<span>BERRIES</span></div>
+        <div class="nav">
+            <a href="#about">О нас</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#constructor">Собрать набор</a>
+            <a href="#testimonials">Отзывы</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1>Элитные духи<br><span class="accent">премиум-класса</span></h1>
+                <p>Французское сырье, безопасный состав, максимальная схожесть с оригиналом. Соберите свой идеальный набор из 5 ароматов.</p>
+                <div class="btn-group">
+                    <a href="#constructor" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Собрать набор</a>
+                    <a href="#catalog" class="btn btn-outline"><i class="fas fa-search"></i> Каталог</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <i class="fas fa-crown"></i>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2>Добро пожаловать в PERFUMEBERRIES</h2>
+                <div class="section-subtitle">парфюмерия, созданная с любовью</div>
+            </div>
+            <div style="max-width: 900px; margin: 0 auto; background: rgba(30,20,50,0.4); padding: 40px; border-radius: 40px;">
+                <p style="margin-bottom: 20px; line-height: 1.6;">Наш проект родился из большой любви к ароматам. Сначала мы создавали духи только для себя и близких. Чтобы начинать день с любимого запаха, чувствовать себя «в своей тарелке» и просто для хорошего настроения.</p>
+                <p style="margin-bottom: 20px;">Но эта магия вышла из-под контроля, и теперь мы делаем духи для друзей наших друзей и для вас. Те самые, что становятся частью привычного образа или поднимают настроение в хмурый день.</p>
+                <p style="margin-bottom: 20px;"><strong>Наша философия:</strong> высокое качество (только французское премиальное сырье), вдохновение лучшими парфюмерами Грасса, безопасность (профессиональная спиртовая основа) и доступная цена без посредников.</p>
+                <p>Доставляем по всей России через 5Post и Почту России. Оплата при получении.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog">
+        <div class="container">
+            <div class="catalog-header">
+                <h2>Наш каталог</h2>
+                <div class="section-subtitle">350+ ароматов на любой вкус</div>
+            </div>
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="women">Женские люкс</button>
+                <button class="filter-btn" data-filter="men">Мужские люкс</button>
+                <button class="filter-btn" data-filter="niche">Ниша</button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Поиск по названию или бренду...">
+            </div>
+            <div class="perfume-grid" id="perfumeGrid"></div>
+        </div>
+    </section>
+
+    <section id="constructor">
+        <div class="container constructor-section">
+            <div class="constructor-container">
+                <h2 style="margin-bottom: 0.5rem;">Соберите свой набор</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Выберите до 5 ароматов из каталога выше</p>
+                
+                <div id="selectedList" class="selected-list">
+                    <p style="color: #c9b3e6;">Выбранные ароматы (0/5):</p>
+                    <div id="selectedItems"></div>
+                </div>
+                
+                <div class="price-summary" id="priceSummary">
+                    Стоимость набора: <span id="totalPrice">0</span> ₽
+                </div>
+                
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Ваше имя *</label>
+                        <input type="text" id="name" required placeholder="Как к вам обращаться?">
+                    </div>
+                    <div class="form-group">
+                        <label>Telegram (ник или номер) *</label>
+                        <input type="text" id="contact" required placeholder="@username или номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий к заказу</label>
+                        <textarea rows="2" id="message" placeholder="Ваши пожелания, вопросы..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-btn" id="submitBtn"><i class="fas fa-paper-plane"></i> Отправить заказ</button>
+                    <div id="formFeedback" style="margin-top: 18px;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container testimonials">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="section-subtitle">то, что говорят о PERFUMEBERRIES</div>
+            <div class="testimonial-grid">
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p>«Ароматы просто божественные! Стойкость 8+ часов, комплименты весь день. Заказала набор из 5 женских люкс — теперь буду брать только здесь!»</p><strong>— Анна, Москва</strong></div>
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p>«Очень долго искала достойную замену любимому нишевому аромату. Здесь нашла идеальный вариант за четверть цены. Качество на высоте!»</p><strong>— Екатерина, Санкт-Петербург</strong></div>
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p>«Мужская коллекция — огонь! Взял набор для себя, теперь это моя подпись. Стойкость отличная, запах дорогой. Спасибо ребятам!»</p><strong>— Артём, Новосибирск</strong></div>
+                <div class="testi-card"><i class="fas fa-quote-left"></i><p>«Очень приятное общение, быстрая доставка 5Post. Ароматы действительно стойкие, чувствуется французское сырьё. Буду заказывать ещё!»</p><strong>— Ольга, Казань</strong></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p><i class="fas fa-hand-holding-heart"></i> PERFUMEBERRIES — элитная парфюмерия для истинных ценителей</p>
+        <p style="margin-top: 12px;">
+            <i class="fab fa-telegram"></i> @perfumeberries  |  
+            <i class="fas fa-envelope"></i> perfumeberries@mail.ru
+        </p>
+        <p style="margin-top: 24px;">Доставка по России: 5Post, Почта России. Оплата при получении.</p>
+    </div>
+</footer>
+
+<script>
+    // ========== ДАННЫЕ АРОМАТОВ ==========
+    const perfumes = [
+        // Женские люкс (первые 50 для компактности, но структура полная)
+        ...["BLUE SEDUCTION", "ARMAND BASI IN RED", "WANTED GIRL BY NIGHT", "MADE FOR WOMEN", "BURBERRY HER", "GODDESS", "BURBERRY WEEKEND", "OMNIA CRYSTALLINE", "AMOR AMOR", "YES I AM", "NOA", "CHANCE", "CHANEL №5", "CHANCE EAU TENDRE", "CHANCE eau FRAICHE", "COCO MADEMOISELLE L'EAU PRIVEE", "212 SEXY", "GOOD GIRL", "212 VIP", "1881 POUR FEMME", "NOMADE ABSOLU DE PARFUM", "CHLOE EAU DE PARFUM", "MISS DIOR PARFUM 2024", "MISS DIOR BLOOMING BOUQUET", "POISON GIRL", "J’ADORE", "MISS CHERIE", "DIORIVIERA", "PURE POISSON", "BY NIGHT", "Q", "LIGHT BLUE", "3 L`IMPERATRICE", "DEVOTION", "PINEAPPLE", "THE ONLY ONE INTENSE", "THE ONE", "DKNY BE DELICICIONS", "SUMMER FESTIVAL", "CHERRY IN THE AIR", "SEXY GRAFFITI", "ARMANI CODE", "MY WAY", "BECAUSE IT’S YOU", "SI PASSIONE", "SI", "ANGE ou DEMON LE SECRET", "IRRESISTIBLE", "L'INTERDIT EAU DE PARFUM INTENSE", "HOT COUTURE"].map(n => ({ name: n, category: "women", brand: "Lux" })),
+        // Мужские люкс
+        ...["BLU", "BASI IN BLUE", "BLUE SEDUCTION", "BOGART MEN", "ONE MAN SHOW", "TYGAR", "MAN IN BLACK", "LONDON FOR MEN", "EGOISTE PLATINUM", "ALLURE HOMME SPORT", "BLEU DE CHANEL", "212 VIP MEN", "212 SEXY", "SAUVAGE", "FAHRENHEIT", "DIOR HOMME 2020", "DIOR HOMME SPORT VERY COOL", "THE ONE", "DOLCE & GABBANA POUR HOMME", "SPIRIT OF THE BRAVE", "ESCADA MOON SPARKLE", "ACQUA DI GIO MEN", "STRONGER WITH YOU", "ACQUA DI GIO PROFONDO", "ARMANI CODE POUR HOMME", "GIVENCHY POUR HOMME", "BLUE LABEL", "L'HOMME IDEAL EXTREME", "TERRE D'HERMES", "BALDESSARINI", "BOSS BOTTLED PACIFIC", "HUGO MEN", "LE MALE", "L'EAU PAR KENZO POUR HOMME", "LACOSTE POUR HOMME", "ESSENTIAL", "LACOSTE L.12.12 BLANC", "ENCRE NOIRE", "INVICTUS", "BLACK XS", "1 MILLION", "1 MILLION PARFUM", "INVICTUS VICTORY", "1 MILLION PRIVE", "PHANTOM", "POLO BLUE", "EROS", "THIS IS HIM! VIBES OF FREEDOM"].map(n => ({ name: n, category: "men", brand: "Lux" })),
+        // Ниша (первые 50)
+        ...["MEMOIR", "PORTRAYAL MAN", "GUIDANCE", "DIA WOMAN", "HONOUR FOR WOMAN", "CRYSTAL LOVE", "HAYATI", "MUSK KASHMIR", "AZALEA", "CRISTOBAL BALENCIAGA", "HEROINE", "AMBER COLOGNE", "BOUCHERON INITIAL", "BAL D'AFRIQUE", "BLACK SAFFRON", "GYPSY WATER", "BIBLIOTEQUE", "MARIJUANA", "BLANCHE", "LA TULIPE", "SLOW DANCE", "MULA MULA DOUBLE CARAMEL", "NOCTURNS CARON", "SYCOMORE", "AVENTUS", "SILVER MOUNTAIN WATER", "PHILOSYKOS EDP", "TUTU BLANC", "VANILLA & LEATHER", "ESCENTRIC 01", "ESCENTRIC 02", "MOLECULE 01 + MANDARIN", "MOLECULE 01", "THE BEAUTIFUL MIND SERIES", "ESCENTRIC 05", "MOLECULE 01 + PATCHOULI", "KINSKI", "MOLECULE 01 + BLACK TEA", "BOIS IMPERIAL", "FLEUR NARCOTIQUE", "LUST IN PARADISE", "BLUE TALISMAN", "COCAINE", "LIPSTICK ROSE", "OUD ORANGE INTENSE", "PAINTER", "DEVIL'S INTRIGUE", "PSYCHODELIC LOVE", "NARCOTIC DELIGHT", "SIDE EFFECT"].map(n => ({ name: n, category: "niche", brand: "Niche" }))
+    ];
+
+    let selectedPerfumes = [];
+    let currentFilter = "all";
+    let searchTerm = "";
+
+    function renderCatalog() {
+        let filtered = perfumes.filter(p => {
+            if (currentFilter !== "all" && p.category !== currentFilter) return false;
+            if (searchTerm && !p.name.toLowerCase().includes(searchTerm.toLowerCase())) return false;
+            return true;
+        });
+        const grid = document.getElementById("perfumeGrid");
+        grid.innerHTML = filtered.map(p => `
+            <div class="perfume-card ${selectedPerfumes.some(s => s.name === p.name) ? 'selected' : ''}" data-name="${p.name}">
+                <div class="perfume-info">
+                    <h4>${p.name}</h4>
+                    <p>${p.brand} • ${p.category === "women" ? "Женский" : p.category === "men" ? "Мужской" : "Ниша"}</p>
+                </div>
+                ${selectedPerfumes.some(s => s.name === p.name) ? '<i class="fas fa-check-circle check-icon"></i>' : '<i class="far fa-circle" style="color:#e8c97a;"></i>'}
+            </div>
+        `).join("");
+        
+        document.querySelectorAll(".perfume-card").forEach(card => {
+            card.addEventListener("click", () => togglePerfume(card.dataset.name));
+        });
+    }
+
+    function togglePerfume(name) {
+        const idx = selectedPerfumes.findIndex(p => p.name === name);
+        if (idx === -1 && selectedPerfumes.length < 5) {
+            const perfume = perfumes.find(p => p.name === name);
+            selectedPerfumes.push(perfume);
+        } else if (idx !== -1) {
+            selectedPerfumes.splice(idx, 1);
+        }
+        updateSelectedUI();
+        renderCatalog();
+    }
+
+    function updateSelectedUI() {
+        const container = document.getElementById("selectedItems");
+        container.innerHTML = selectedPerfumes.map(p => `
+            <span class="selected-item">${p.name} <span class="remove-item" data-name="${p.name}">✕</span></span>
+        `).join("");
+        document.querySelectorAll(".remove-item").forEach(el => {
+            el.addEventListener("click", (e) => {
+                e.stopPropagation();
+                togglePerfume(el.dataset.name);
+            });
+        });
+        
+        const count = selectedPerfumes.length;
+        const isNiche = selectedPerfumes.some(p => p.category === "niche");
+        const price = isNiche ? 5500 : 5000;
+        document.getElementById("totalPrice").innerText = price;
+    }
+
+    // Telegram настройки
+    const TELEGRAM_BOT_TOKEN = '8532984829:AANLk3ZzU_3y43k-Wxs9aTb0ZgYlmeulvKy';
+    const TELEGRAM_CHAT_ID = '-1002199847634';
+
+    document.getElementById("filters").addEventListener("click", (e) => {
+        if (e.target.classList.contains("filter-btn")) {
+            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+            e.target.classList.add("active");
+            currentFilter = e.target.dataset.filter;
+            renderCatalog();
+        }
+    });
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+        searchTerm = e.target.value;
+        renderCatalog();
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const contact = document.getElementById("contact").value.trim();
+        const message = document.getElementById("message").value.trim();
+        if (!name || !contact) {
+            document.getElementById("formFeedback").innerHTML = '<div class="toast-message">❌ Укажите имя и контакт</div>';
+            return;
+        }
+        if (selectedPerfumes.length === 0) {
+            document.getElementById("formFeedback").innerHTML = '<div class="toast-message">❌ Выберите хотя бы один аромат</div>';
+            return;
+        }
+        const isNiche = selectedPerfumes.some(p => p.category === "niche");
+        const price = isNiche ? 5500 : 5000;
+        const perfumesList = selectedPerfumes.map(p => p.name).join(", ");
+        const text = `🌸 *НОВЫЙ ЗАКАЗ PERFUMEBERRIES* 🌸\n\n👤 *Имя:* ${name}\n📱 *Контакт:* ${contact}\n✨ *Ароматы:* ${perfumesList}\n💰 *Сумма:* ${price} ₽\n💬 *Комментарий:* ${message || "—"}`;
+        
+        const btn = document.getElementById("submitBtn");
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Отправка...';
+        
+        try {
+            await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: "POST", headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({chat_id: TELEGRAM_CHAT_ID, text, parse_mode: "Markdown"})
+            });
+            document.getElementById("formFeedback").innerHTML = '<div class="toast-message">✅ Заказ отправлен! Свяжусь с вами в Telegram.</div>';
+            document.getElementById("name").value = "";
+            document.getElementById("contact").value = "";
+            document.getElementById("message").value = "";
+            selectedPerfumes = [];
+            updateSelectedUI();
+            renderCatalog();
+        } catch(err) {
+            document.getElementById("formFeedback").innerHTML = '<div class="toast-message">❌ Ошибка, попробуйте позже</div>';
+        }
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить заказ';
+    });
+
+    renderCatalog();
+    updateSelectedUI();
+</script>
+</body>
+</html>
